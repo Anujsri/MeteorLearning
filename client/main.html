@@ -47,6 +47,7 @@
 <template name="note">
     <li class="collection-item">
         {{text}} : <strong>Added by {{username}}</strong>
+        Name : {{authorname}}
         <a href="#" class="delete-note secondary-content"><i class="material-icons">close</i></a>
     </li>
 </template>
@@ -56,8 +57,10 @@
     <div id="addnote" class="modal">
         <div class="modal-content">
             <h3>Add Note</h3>
-            <form class="add-form">
-                <input type="text" placeholder="Add Note..." name="text">
+            <form  >
+                <input type="text" placeholder="Add Note..."  id="name">
+                <input type="text" placeholder="Add Authorname..."  id="authorname">  
+                <button class="add-form btn btn-primary">Submit</button> 
             </form>
         </div>
         

@@ -22,20 +22,26 @@ Template.body.helpers({
 });
 
 Template.add.events({
-	'submit .add-form' :function(){
+	'click .add-form' :function(){
+		console.log("ANuj");
 		event.preventDefault();
 
 		//Get input Value
 
 		const target = event.target;
-		const text = target.text.value;
+		const text = document.getElementById('name').value;
+		console.log("ANuj : "+ text);
+		 const authorname = document.getElementById('authorname').value;
+		console.log("Name : " + authorname)
 
 		//Insert note into collection
+		// var authorname = "Anuj";
 
-		Meteor.call('notes.insert',text);
-		console.log("add1"+ text);
+		Meteor.call('notes.insert',text,authorname);
+	 
 		//Clear the form data
-    	target.text.value = '';
+    	document.getElementById('name').value = '';
+    	document.getElementById('name').value='';
 
     	//close the model
     	$('#addnote').modal('close');
