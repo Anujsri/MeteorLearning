@@ -1,0 +1,19 @@
+<template name="BasicLayout">
+    <div class="container">    
+    <main>
+        {{> Template.dynamic template=main}}
+    </main>
+    </div>
+</template>
+
+<template name="AllNotes">
+    <center><h3>All Notes</h3></center>
+    {{#if notesa}}
+     <ul class="collection">
+         {{#each notesa}}
+            <li class="collection-item">{{text}} : <strong>Added by {{username}}</strong></li>
+        {{/each}}
+     </ul> 
+    {{/if}}
+</template>
+
